@@ -1,3 +1,4 @@
+
 html {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
@@ -9,6 +10,8 @@ body {
 }
 
 /************** Header ************/
+
+
 .section-header {
   display: flex;
   flex-direction: column;
@@ -29,7 +32,8 @@ h2 {
 }
 
 .buttonexploration {
-  background-color: linear, left top, left bottom, from(#ff93e1), color-stop(80%, #a16be0);
+  background-color: (linear, left top, left bottom, from(#ff93e1), color-stop(80%, #a16be0));
+  background: -o-linear-gradient(top, #ff93e1, #a16be0 80%);
   background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
   border-radius: 50px;
   border: none;
@@ -38,9 +42,10 @@ h2 {
   width: 70%;
   height: 40px;
   font-size: 14px;
-}
+  }
 
-/*********** Main ************/
+  /*********** Main ************/
+
 .h2-fonctionnement {
   font-weight: 500;
   font-size: 18px;
@@ -73,9 +78,9 @@ li {
 
 img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
   width: 100%;
   height: 100%;
 }
@@ -83,43 +88,51 @@ img {
 .new {
   position: relative;
 }
-
 .news::befores {
   content: "Nouveau";
   position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 1.25rem;
   right: 1.25rem;
   border-radius: 0.3125rem;
-  /************* Fonctionnement ****************/
-}
-.news::befores section.process {
+
+
+/************* Fonctionnement ****************/
+
+section.process {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.news::befores .btn {
+
+.btn {
   border-radius: 20px !important;
   width: 95%;
   height: 50px;
   margin-left: 8px;
 }
-.news::befores .main-restaurant {
+
+.main-restaurant {
   padding: 3.125rem 1.25rem 2.5rem;
   background-color: #F6F6F6;
 }
-.news::befores .main-restaurant h2 {
+.main-restaurant h2 {
   margin-bottom: 0.625rem;
 }
 @media screen and (min-width: 768px) {
-  .news::befores .main-restaurant h2 {
+  .main-restaurant h2 {
     text-align: center;
   }
 }
-.news::befores .main-restaurant a {
+
+.main-restaurant a {
   width: 100%;
   max-width: 40.625rem;
   height: 18.75rem;
@@ -128,16 +141,19 @@ img {
   margin: 1.25rem 0;
   color: black;
 }
-.news::befores .main-restaurant a figure {
+
+.main-restaurant a figure {
   height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.news::befores .main-restaurant a p {
+
+.main-restaurant a p {
   font-weight: 300;
 }
-.news::befores .main-restaurant__cards {
+
+.main-restaurant__cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -146,7 +162,8 @@ img {
   width: 100%;
   max-width: 125rem;
 }
-.news::befores .card__info {
+
+.card__info {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -154,87 +171,89 @@ img {
   height: 30%;
   padding: 0.625rem 0.9375rem;
 }
-.news::befores .card__info h3 {
+
+.card__info h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.news::befores .card__info__heart {
+
+.card__info__heart {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1.875rem;
   height: 1.875rem;
 }
-.news::befores .card__info__heart::before {
+
+.card__info__heart::before {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
 }
-.news::befores .card__info__heart::after {
+
+.card__info__heart::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
+  -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+  background: -o-linear-gradient(top, #FF79DA, #9356DC 80%);
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   opacity: 0;
   cursor: pointer;
 }
-.news::befores .card__info__heart:hover::before {
+.card__info__heart:hover::before {
   color: transparent;
 }
-.news::befores .card__info__heart:hover::after {
+.card__info__heart:hover::after {
   font-weight: 900;
   opacity: 1;
 }
-.news::befores footer {
-  padding: 1.875rem 1.25rem;
+
+.footer{
+  padding: rem-calc(30) rem-calc(20);
   color: white;
   background-color: #333;
+      h2{
+          margin-bottom: rem-calc(20);
+          font-family: $title-font;
+          font-weight: 400;
+          @media screen and (min-width: 1300px) {
+              text-align: center;
+          }
+      }
+      &__nav{
+          margin: rem-calc(10) 0;
+          @media screen and (min-width: 1300px) {
+              display: flex;
+              justify-content: center;
+          }
+          li{
+              margin-bottom: rem-calc(3);
+              @media screen and (min-width: 1300px) {
+                  margin: 0 rem-calc(40);
+                  display: flex;
+              }
+                  &:nth-child(1)::before{
+                      content: '\f2e7';
+                      font-family: 'FontAwesome';
+                      margin-right: rem-calc(10);
+                      font-size: clamp(1.3rem, 2vw, 1.7rem);
+                  }
+                  &:nth-child(2)::before{
+                      content: '\f4c4';
+                      font-family: 'FontAwesome';
+                      margin-right: rem-calc(10);
+                      font-size: clamp(1.3rem, 2vw, 1.7rem);
+                  }
+                  a{
+                      transition: color 0.4s ease-in-out;
+                      &:hover, &:focus{
+                          color: $light-primary-color;
+                          }
+                  }
+          }
+    }
+  } 
 }
-.news::befores footer h2 {
-  margin-bottom: 1.25rem;
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer h2 {
-    text-align: center;
-  }
-}
-.news::befores footer .footer-nav {
-  margin: 0.625rem 0;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer .footer-nav {
-    display: flex;
-    justify-content: center;
-  }
-}
-.news::befores footer .footer-nav__item {
-  margin-bottom: 0.1875rem;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer .footer-nav__item {
-    margin: 0 2.5rem;
-    display: flex;
-  }
-}
-.news::befores footer .footer-nav__item:nth-child(1)::before {
-  content: "\f2e7";
-  font-family: "FontAwesome";
-  margin-right: 0.625rem;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
-}
-.news::befores footer .footer-nav__item:nth-child(2)::before {
-  content: "\f4c4";
-  font-family: "FontAwesome";
-  margin-right: 0.625rem;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
-}
-.news::befores footer .footer-nav__item a {
-  transition: color 0.4s ease-in-out;
-}
-.news::befores footer .footer-nav__item a:hover {
-  color: #a16be0;
-}/*# sourceMappingURL=style.css.map */
