@@ -212,17 +212,8 @@ section.process {
 }
 
 .footer{
-  padding: rem-calc(30) rem-calc(20);
   color: white;
-  background-color: #333;
-      h2{
-          margin-bottom: rem-calc(20);
-          font-family: $title-font;
-          font-weight: 400;
-          @media screen and (min-width: 1300px) {
-              text-align: center;
-          }
-      }
+  background-color: #353535;
       &__nav{
           margin: rem-calc(10) 0;
           @media screen and (min-width: 1300px) {
