@@ -9,6 +9,32 @@ body {
 }
 
 /************** Header ************/
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 90%;
+  padding: 20px;
+}
+
+.input-with-icon {
+  
+}
+
+input#location {
+  height: 50px;
+  background-color: #eaeaea;
+  width: 100%;
+  border: none;
+  text-align: center;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
 .section-header {
   display: flex;
   flex-direction: column;
@@ -23,14 +49,15 @@ h1 {
   font-size: 24px;
 }
 
-h2 {
+.h2-header {
   font-weight: 100;
   font-size: 16px;
 }
 
 .buttonexploration {
-  background-color: linear, left top, left bottom, from(#ff93e1), color-stop(80%, #a16be0);
+  background: -o-linear-gradient(top, #ff93e1, #a16be0 80%);
   background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -38,9 +65,11 @@ h2 {
   width: 70%;
   height: 40px;
   font-size: 14px;
-}
+  position: relative;
+  }
 
-/*********** Main ************/
+  /*********** Main ************/
+
 .h2-fonctionnement {
   font-weight: 500;
   font-size: 18px;
@@ -72,54 +101,111 @@ li {
 }
 
 img {
-  -o-object-fit: cover;
+  height: 50%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   object-fit: cover;
-  -o-object-position: center;
   object-position: center;
   width: 100%;
-  height: 100%;
 }
 
 .new {
   position: relative;
 }
-
 .news::befores {
   content: "Nouveau";
   position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 1.25rem;
   right: 1.25rem;
   border-radius: 0.3125rem;
-  /************* Fonctionnement ****************/
 }
-.news::befores section.process {
+
+
+/************* Fonctionnement ****************/
+
+.process {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 15px;
 }
-.news::befores .btn {
-  border-radius: 20px !important;
-  width: 95%;
-  height: 50px;
-  margin-left: 8px;
+
+.btn {
+  border-radius: 20px;
+  width: 90%;
+  height: 55px;
+  border: none;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  transition: all .4s ease-in-out;
 }
-.news::befores .main-restaurant {
-  padding: 3.125rem 1.25rem 2.5rem;
-  background-color: #F6F6F6;
+
+.fa-solid {
+  margin-right: 20px;
+  color: #7e7e7e;
 }
-.news::befores .main-restaurant h2 {
+
+.fa-solid.fa-ellipsis-vertical {
+  margin-right: 2px;
+}
+
+.fa-solid.fa-store {
+  color: #9356DC;
+}
+
+.fonctionnement-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0.25rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #fff;
+  background-color: #9356dc;
+}
+
+/********* Restaurants *******/
+
+.restaurant {
+  padding: 2.125rem 0.25rem 2.5rem;
+  background-color: #f3f3f3;
+}
+.main-restaurant h2 {
   margin-bottom: 0.625rem;
 }
 @media screen and (min-width: 768px) {
-  .news::befores .main-restaurant h2 {
+  .main-restaurant h2 {
     text-align: center;
   }
 }
-.news::befores .main-restaurant a {
+
+.img-card {
+  height: 130px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.main-restaurant a {
   width: 100%;
   max-width: 40.625rem;
   height: 18.75rem;
@@ -128,16 +214,20 @@ img {
   margin: 1.25rem 0;
   color: black;
 }
-.news::befores .main-restaurant a figure {
+
+.main-restaurant a figure {
   height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.news::befores .main-restaurant a p {
+
+.main-restaurant a p {
   font-weight: 300;
 }
-.news::befores .main-restaurant__cards {
+
+
+.card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -146,7 +236,8 @@ img {
   width: 100%;
   max-width: 125rem;
 }
-.news::befores .card__info {
+
+.card__info {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -154,87 +245,99 @@ img {
   height: 30%;
   padding: 0.625rem 0.9375rem;
 }
-.news::befores .card__info h3 {
+
+.card__info h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 0px;
 }
-.news::befores .card__info__heart {
+.p-card {
+  margin-top: -3px;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+a.new {
+  width: 100%;
+  max-width: 40.625rem;
+  height: 12.75rem;
+  border-radius: 20px;
+  margin: 1.25rem 0;
+  background-color: white;
+}
+.card__info__heart {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1.875rem;
   height: 1.875rem;
+  font-weight: 100;
 }
-.news::befores .card__info__heart::before {
+
+.card__info__heart::before {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
 }
-.news::befores .card__info__heart::after {
+
+.card__info__heart::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   position: absolute;
+  -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+  background: -o-linear-gradient(top, #FF79DA, #9356DC 80%);
   background: linear-gradient(to bottom, #FF79DA, #9356DC 80%);
   opacity: 0;
   cursor: pointer;
 }
-.news::befores .card__info__heart:hover::before {
+.card__info__heart:hover::before {
   color: transparent;
 }
-.news::befores .card__info__heart:hover::after {
+.card__info__heart:hover::after {
   font-weight: 900;
   opacity: 1;
 }
-.news::befores footer {
-  padding: 1.875rem 1.25rem;
+
+.footer{
   color: white;
-  background-color: #333;
-}
-.news::befores footer h2 {
-  margin-bottom: 1.25rem;
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer h2 {
-    text-align: center;
-  }
-}
-.news::befores footer .footer-nav {
-  margin: 0.625rem 0;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer .footer-nav {
-    display: flex;
-    justify-content: center;
-  }
-}
-.news::befores footer .footer-nav__item {
-  margin-bottom: 0.1875rem;
-}
-@media screen and (min-width: 1300px) {
-  .news::befores footer .footer-nav__item {
-    margin: 0 2.5rem;
-    display: flex;
-  }
-}
-.news::befores footer .footer-nav__item:nth-child(1)::before {
-  content: "\f2e7";
-  font-family: "FontAwesome";
-  margin-right: 0.625rem;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
-}
-.news::befores footer .footer-nav__item:nth-child(2)::before {
-  content: "\f4c4";
-  font-family: "FontAwesome";
-  margin-right: 0.625rem;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
-}
-.news::befores footer .footer-nav__item a {
-  transition: color 0.4s ease-in-out;
-}
-.news::befores footer .footer-nav__item a:hover {
-  color: #a16be0;
-}/*# sourceMappingURL=style.css.map */
+  background-color: #353535;
+  &__nav{
+      margin: rem-calc(10) 0;
+      @media screen and (min-width: 1300px) {
+          display: flex;
+          justify-content: center;
+      }
+      li{
+          margin-bottom: rem-calc(3);
+          @media screen and (min-width: 1300px) {
+              margin: 0 rem-calc(40);
+              display: flex;
+          }
+          /****&:nth-child(1)::before{
+          //     content: '\f2e7';
+          //     font-family: 'FontAwesome';
+          //     margin-right: rem-calc(10);
+          //     font-size: clamp(1.3rem, 2vw, 1.7rem); 
+          // } *******/
+          &:nth-child(2)::before{
+              content: '\f4c4';
+              font-family: 'FontAwesome';
+              margin-right: rem-calc(10);
+              font-size: clamp(1.3rem, 2vw, 1.7rem);
+          }
+          a{
+              transition: color 0.4s ease-in-out;
+              &:hover, &:focus{
+                  /*color: $light-primary-color;*/
+              }
+          }
+        }
+      }
+  } 
+
+/*# sourceMappingURL=style.css.map */
