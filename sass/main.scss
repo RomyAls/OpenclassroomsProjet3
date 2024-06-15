@@ -1,0 +1,22 @@
+// Utils
+@import "./utils/animations";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/variables";
+
+
+// Base
+@import "./base/base";
+@import "./base/reset";
+
+// Layout
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/loader";
+@import "./layout/main";
+
+// Pages
+@import "./pages/restaurants";
+
+// Components
+@import "./components/new-card"
